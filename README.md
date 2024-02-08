@@ -19,4 +19,8 @@ The steps to do out variant calling are:
 
   5- Perform the variant calling using freebayes. 
 
+First we will unzip our sequences as they are compressed, for that we will use:
+  snakemake data/samples/A_1_20_{1,2}.fastq -c4
+
+
 
