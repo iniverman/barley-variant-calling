@@ -27,9 +27,9 @@ First we will unzip our sequences as they are compressed, for that we will use:
 Then we will get the fastq for each of our reads. Fastq is a text format to store biological sequences,obtained from the sequenciation, and their quality scores. 
 
 To see the quality scores easily we can do:
-'''
+```
 data/samples/A_1_20_{1,2}_fastqc.{html,zip}
-'''
+```
 
 
 
