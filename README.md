@@ -21,9 +21,16 @@ The steps to do out variant calling are:
   5- Perform the variant calling using freebayes. 
 
 First we will unzip our sequences as they are compressed, for that we will use:
-   ```
+  ```
   snakemake data/samples/A_1_20_{1,2}.fastq -c4
   ```
+Then we will get the fastq for each of our reads. Fastq is a text format to store biological sequences,obtained from the sequenciation, and their quality scores. 
+
+To see the quality scores easily we can do:
+'''
+data/samples/A_1_20_{1,2}_fastqc.{html,zip}
+'''
+
 
 
 
