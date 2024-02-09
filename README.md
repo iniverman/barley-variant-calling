@@ -30,6 +30,7 @@ To see the quality scores easily we can do:
 ```
 data/samples/A_1_20_{1,2}_fastqc.{html,zip}
 ```
+After seeing the quality of our sequences, we must see how well are they and take it into account to make some decision in the analysis about it.
 
 
 
