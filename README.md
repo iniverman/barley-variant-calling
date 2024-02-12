@@ -26,6 +26,11 @@ The steps to do out variant calling are:
   4- Marking duplicates and treating the readgroups.
 
   5- Perform the variant calling using freebayes. 
+
+If you want directly the call archive and have the reference genome indexed you can run:
+```
+snakemake --forceall -c4
+```
   
 
   ### 1-Preparation of our data.
@@ -82,6 +87,7 @@ But to see it in a more easy and understandable way, we can print it graphically
 snakemake results/depth/plots/A_1_20.svg -c4
 
 ```
+
 Using this we will get the plots for the depth for each chromosome. 
 
 ### 4- Marking duplicates and treating the readgroups.
@@ -100,6 +106,16 @@ Finally we can perform the variant calling, to do that wehave to run :
 ```
 snakemake calls/call_bayes.vcf -c4
 ```
+This is also a process that take some time.
+
+## Workflow distribution
+We can also check the steps taken by the program to perform the calling: 
+```
+snakemake --dag  -n  | dot -Tsvg > dag.svg
+
+```
+
+
 
 
 
