@@ -10,7 +10,7 @@ Variant calling allow us to detect and study single nucleotide polymorphisms (SN
 ## Materials & Methodologies
 
 
-To perform this study we will use Snakemake from anaconda, samtools, bwa and the freebayes and picard tools.
+To perform this study we will use Snakemake from anaconda, samtools, bwa and the freebayes tool.
 
 We will use a pired end couple of samples of bareley (A_1_20_1,A_1_20_2), in this case both of them are in format .fastq.gz. Also we use as reference the barely genome (GCA_904849725.1_MorexV3_pseudomolecules.chrnames.fna).
 
@@ -22,10 +22,8 @@ The steps to do out variant calling are:
   2- Quality Control of our samples.
 
   3- Mapping against the reference genome.
-  
-  4- Mark duplicates using Picard.
 
-  5- Perform the variant calling using freebayes. 
+  4- Perform the variant calling using freebayes. 
   
 
   ### 1-Preparation of our data.
@@ -82,6 +80,8 @@ But to see it in a more easy and understandable way, we can print it graphically
 snakemake results/depth/plots/A_1_20.svg -c4
 
 ```
+Using this we will get the plots for the depth for each chromosome. 
+
 
 
 
