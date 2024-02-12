@@ -14,7 +14,7 @@ We will use a pired end couple of samples of bareley (A_1_20_1,A_1_20_2), in thi
 
 The steps to do out variant calling are:
 
-  1- Preprocessing and preparation of our data.
+  1- Preparation of our data.
 
   2- Quality Control of our samples.
 
@@ -25,7 +25,7 @@ The steps to do out variant calling are:
   5- Perform the variant calling using freebayes. 
   
 
-  ### 1-Preprocessing and preparation of our data.
+  ### 1-Preparation of our data.
  
 
 It is possible that the data is compressed (as in our case), so for that we make a rule to descompress our archives. We will use:
@@ -34,11 +34,16 @@ It is possible that the data is compressed (as in our case), so for that we make
   ```
 Then we will get the fastq for each of our samples. Fastq is a text format to store biological sequences,obtained from the sequenciation, and their quality scores. 
 
-To get the quality scores you have to run this code:
+### 2- Quality Control of our samples.
+
+To get the quality of each of the fastq you have to run this code:
 ```
 data/samples/A_1_20_{1,2}_fastqc.{html,zip}
 ```
-After seeing the quality of our sequences, we must see how well are they and take it into account to make some decision in the analysis about it.
+Quality control is important because it give us specific information about the quality of the fastq to study, and can help us deciding if we have to do a preprocessing to our sample, like removing the adapters used in the sequencing for example.
+
+### 3- Map the reads against the reference genome.
+
 
 
 
