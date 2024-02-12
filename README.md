@@ -18,7 +18,7 @@ The steps to do out variant calling are:
 
   2- Quality Control of our samples.
 
-  3- Map the reads against the reference genome.
+  3- Mapping against the reference genome.
   
   4- Mark duplicates using Picard.
 
@@ -42,7 +42,7 @@ data/samples/A_1_20_{1,2}_fastqc.{html,zip}
 ```
 Quality control is important because it give us specific information about the quality of the fastq to study, and can help us deciding if we have to do a preprocessing to our sample, like removing the adapters used in the sequencing for example.
 
-### 3- Map the reads against the reference genome.
+### 3- Mapping against the reference genome.
 
 
 
