@@ -50,6 +50,10 @@ Quality control is important because it give us specific information about the q
 
 ### 3- Mapping against the reference genome.
 
+The first step is to index the reference genome. To do that you can run this code: 
+```
+bwa index -a bwtsw data/GCA_904849725.1_MorexV3_pseudomolecules.chrnames.fna
+```
 
 
 
