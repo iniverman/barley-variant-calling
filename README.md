@@ -68,6 +68,21 @@ snakemake results/sorted/A_1_20_sorted.bam -c4
 
 #### 3.5- Calculate and visualize the depth of the mapping.
 
+It is important to check how the map process has gone. To do that we check the depth of our mapped file with: 
+```
+snakemake results/depth/A_1_20_depth.csv -c4
+```
+With this we can check the depth for chromosome and position in the chromosome, we can even check the mean of the depth for each one using: 
+```
+snakemake results/depth/A_1_20_mean.csv -c4
+```
+But to see it in a more easy and understandable way, we can print it graphically and make it more visual with this:
+
+```
+snakemake results/depth/plots/A_1_20.svg -c4
+
+```
+
 
 
 
