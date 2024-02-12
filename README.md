@@ -10,7 +10,7 @@ Variant calling allow us to detect and study single nucleotide polymorphisms (SN
 ## Materials & Methodologies
 
 
-To perform this study we will use Snakemake from anaconda and the freebayes and picard tools. 
+To perform this study we will use Snakemake from anaconda, samtools, bwa and the freebayes and picard tools.
 
 We will use a pired end couple of samples of bareley (A_1_20_1,A_1_20_2), in this case both of them are in format .fastq.gz. Also we use as reference the barely genome (GCA_904849725.1_MorexV3_pseudomolecules.chrnames.fna).
 
@@ -54,6 +54,14 @@ The first step is to index the reference genome. To do that you can run this cod
 ```
 bwa index -a bwtsw data/GCA_904849725.1_MorexV3_pseudomolecules.chrnames.fna
 ```
+This is a step that can take a lot of time (from hours to days depending of the genome and the computational capacity) so be patient. You can estimate the time is going to take because the terminal will show you so often how many characters have it study so far.
+
+Then we can proceed with the mapping of our samples against the genome reference:
+```
+snakemake results/mapped/A_1_20.bam -c4
+```
+
+
 
 
 
