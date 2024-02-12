@@ -41,7 +41,7 @@ Then we will get the fastq for each of our samples. Fastq is a text format to st
 
 To get the quality of each of the fastq you have to run this code:
 ```
-data/samples/A_1_20_{1,2}_fastqc.{html,zip}
+snakemake data/samples/A_1_20_{1,2}_fastqc.{html,zip} -c4
 ```
 Quality control is important because it give us specific information about the quality of the fastq to study, and can help us deciding if we have to do a preprocessing to our sample, like removing the adapters used in the sequencing for example.
 
