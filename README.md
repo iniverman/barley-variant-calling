@@ -60,6 +60,13 @@ Then we can proceed with the mapping of our samples against the genome reference
 ```
 snakemake results/mapped/A_1_20.bam -c4
 ```
+The BAM file is the compressed binary version of a SAM file,that is the format to save the mapping of the sequences.
+Then we sort the BAM file wih:
+```
+snakemake results/sorted/A_1_20_sorted.bam -c4
+```
+
+#### 3.5- Calculate and visualize the depth of the mapping.
 
 
 
