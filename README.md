@@ -25,7 +25,7 @@ The steps to do out variant calling are:
   5- Perform the variant calling using freebayes. 
   
 
-  # 1-Preprocessing and preparation of our data.
+  ### 1-Preprocessing and preparation of our data.
  
 
 It is possible that the data is compressed (as in our case), so for that we make a rule to descompress our archives. We will use:
