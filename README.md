@@ -31,6 +31,8 @@ If you want directly the call archive and have the reference genome indexed you 
 ```
 snakemake --forceall -c4
 ```
+![dag-plot-included](https://github.com/iniverman/barley-variant-calling-using-freebayes/blob/main/dag.svg)
+
   
 
   ### 1-Preparation of our data.
