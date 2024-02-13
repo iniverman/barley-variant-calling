@@ -12,9 +12,10 @@ Variant calling allow us to detect and study single nucleotide polymorphisms (SN
 ## Materials & Methodologies
 
 
-To perform this study we will use Snakemake from anaconda, samtools, bwa and the freebayes and picard tools.
+To perform this study we will use Snakemake from anaconda, samtools, bwa and the freebayes and picard tools. 
+The data samples are in data/samples and the genome reference in fasta format can be downloaded from here https://www.ebi.ac.uk/ena/browser/view/GCA_904849725.1.
 
-We will use a pired end couple of samples of bareley (A_1_20_1,A_1_20_2), in this case both of them are in format .fastq.gz. Also we use as reference the barely genome (GCA_904849725.1_MorexV3_pseudomolecules.chrnames.fna).
+In this case we will use a pired end couple of samples of bareley (A_1_20_1.fastq.gz,A_1_20_2.fastq.gz), in this case both of them are in format. Also we use as reference the barely genome (GCA_904849725.1_MorexV3_pseudomolecules.chrnames.fna).
 
 
 The steps to do out variant calling are:
@@ -29,7 +30,7 @@ The steps to do out variant calling are:
 
   5- Perform the variant calling using freebayes. 
 
-If you want directly the call archive and have the reference genome indexed you can run:
+If the reference genome is prevously indexed, the whole code can be run using:
 ```
 snakemake -p -c4
 ```
@@ -100,7 +101,7 @@ snakemake results/markdup/A_1_20_nodup.{bam,txt} -c4
 ```
 Now we are going to assign ou reads into a new read group: 
 ```
-snakemake results/markdup/{sample}_RG.bam -c4
+snakemake results/markdup/A_1_20_RG.bam -c4
 ```
 ### 5- Perform the variant calling using freebayes. 
 Finally we can perform the variant calling, to do that wehave to run :
