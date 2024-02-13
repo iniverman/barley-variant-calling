@@ -1,4 +1,4 @@
-# Variant Calling usinf Freebayes
+# Variant Calling using Freebayes
 
 ## Introduction
 
