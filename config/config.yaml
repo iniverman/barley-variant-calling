@@ -1,0 +1,10 @@
+samples: 
+    A_1_20_1: ../data/samples/A_1_20_1.fastq
+    A_1_20_2: ../data/samples/A_1_20_2.fastq
+
+samples_name: 
+    A_1_20
+samples_unit:
+    [1,2]
+
+genome_name: data/GCA_904849725.1_MorexV3_pseudomolecules.chrnames.fna
