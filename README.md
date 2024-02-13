@@ -29,7 +29,7 @@ The steps to do out variant calling are:
 
 If you want directly the call archive and have the reference genome indexed you can run:
 ```
-snakemake --forceall -c4
+snakemake -p -c4
 ```
 
   ### 1-Preparation of our data.
