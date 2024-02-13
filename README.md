@@ -99,10 +99,7 @@ Now we are going to mark the duplicated reads caused during the sequenciation st
 ```
 snakemake results/markdup/A_1_20_nodup.{bam,txt} -c4
 ```
-Now we are going to assign ou reads into a new read group: 
-```
-snakemake results/markdup/A_1_20_RG.bam -c4
-```
+
 ### 5- Perform the variant calling using freebayes. 
 Finally we can perform the variant calling, to do that wehave to run :
 ```
