@@ -13,7 +13,7 @@ Variant calling allow us to detect and study single nucleotide polymorphisms (SN
 
 
 To perform this study we will use Snakemake from anaconda, samtools, bwa, bcftools and the freebayes,picard and GATK tools. 
-The data samples are in data/samples and the genome reference in fasta format can be downloaded from here https://www.ebi.ac.uk/ena/browser/view/GCA_904849725.1.
+The data samples are in data/samples and the genome reference in fasta format is in data a reduced one or to have the whole it can be downloaded from here https://www.ebi.ac.uk/ena/browser/view/GCA_904849725.1.
 
 In this case we will use a pired end couple of samples of bareley (A_1_20_1.fastq.gz,A_1_20_2.fastq.gz), in this case both of them are in format. Also we use as reference the barely genome (GCA_904849725.1_MorexV3_pseudomolecules.chrnames.fna).
 
