@@ -7,4 +7,4 @@ samples_name:
 samples_unit:
     [1,2]
 
-genome_name: data/genome.fa
+genome_name: data/genome.fasta
