@@ -7,4 +7,4 @@ samples_name:
 samples_unit:
     [1,2]
 
-genome_name: data/GCA_904849725.1_MorexV3_pseudomolecules.chrnames.fna
+genome_name: data/genome.fa
