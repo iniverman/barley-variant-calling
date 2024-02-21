@@ -12,7 +12,7 @@ Variant calling allow us to detect and study single nucleotide polymorphisms (SN
 ## Materials & Methodologies
 
 
-To perform this study we will use Snakemake from anaconda, samtools, bwa, bcftools and the freebayes,picard and GATK tools. 
+To perform this study we will use Snakemake from anaconda, samtools, bwa, bcftools and the deepvariant,freebayes,picard and GATK tools.  
 The data samples are in data/samples and the genome reference in fasta format is in data a reduced one or to have the whole it can be downloaded from here https://www.ebi.ac.uk/ena/browser/view/GCA_904849725.1.
 
 In this case we will use a pired end couple of samples of bareley (A_1_20_1.fastq.gz,A_1_20_2.fastq.gz), in this case both of them are in format. Also we use as reference the barely genome (GCA_904849725.1_MorexV3_pseudomolecules.chrnames.fna).
@@ -28,9 +28,11 @@ The steps to do out variant calling are:
 
   4- Marking duplicates and treating the readgroups.
 
-  5- Perform the variant calling. 
+  5- Perform the variant calling with freebayes and gatk.
 
-  6- Filter vcf files
+  6- Perform the variant calling with deepvariantl.
+
+  7- Filter vcf files
 
 If the reference genome is prevously indexed, the whole code can be run using:
 ```
@@ -105,8 +107,8 @@ Now we are going to mark the duplicated reads caused during the sequenciation st
 snakemake results/markdup/A_1_20_nodup.{bam,txt} -c4
 ```
 
-### 5- Perform the variant calling using freebayes. 
-Finally we can perform the variant calling, to do that wehave to run :
+### 5- Perform the variant calling. 
+Finally we can perform the variant calling, to do that we have to run :
 ```
 snakemake calls/bayes/call_bayes.vcf -c4
 ```
@@ -118,7 +120,21 @@ To get the variants using GATK.
 
 This is also a process that take some time.
 
-### 6- Filter vcf files.
+### 6-Perform the variant calling with deepvariantl.
+
+To use deepvariant we have to run docker and pull an image from it. If docker is not installed use:
+```
+sudo apt -y update
+sudo apt-get -y install docker.io
+```
+Then we can pull the image with:
+
+```
+BIN_VERSION="1.6.0"
+sudo docker pull google/deepvariant:"${BIN_VERSION}"
+```
+
+### 7- Filter vcf files.
 Now we are going to filter our vcf files to divide it in the ones with snps and the ones with indels. 
 
 To do this we will use bcftools, but first there are some previous steps we must perform.
