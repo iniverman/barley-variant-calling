@@ -139,7 +139,7 @@ Now we are going to filter our vcf files to divide it in the ones with snps and 
 
 To do this we will use bcftools, but first there are some previous steps we must perform.
 
-First we need to compress our files into an bgzip format, that compress the file in blocks and allow indexes to be built against the compressed file. 
+First we need to compress our files into an bgzip format, that compress the file in blocks and allow indexes to be built against the compressed file.The deepvariant file is already compressed.
 
 To do that we use:
 ```
@@ -150,20 +150,20 @@ snakemake calls/{bayes/call_bayes,gatk/call_gatk}_sorted.vcf.gz -c4
 It could be that out vcf files are not well sorted, so we must sort them using:
 
 ```
-snakemake calls{bayes/call_bayes,gatk/call_gatk}_sorted.vcf.gz -c4
+snakemake calls{bayes/call_bayes,gatk/call_gatk,deepvariant/call_deepvariant}_sorted.vcf.gz -c4
 
 ```
 
 Then we need to index our vcf files to use bcf tools with the following code:
 
 ```
-snakemake calls{bayes/call_bayes,gatk/call_gatk}_sorted.vcf.gz.csi -c4
+snakemake calls{bayes/call_bayes,gatk/call_gatk,deepvariant/call_deepvariant}_sorted.vcf.gz.csi -c4
 
 ```
 
 And finally we use the following code to get the vcf files:
 ```
-snakemake calls/{bayes/call_bayes_{snp,indel},gatk/call_gatk_{snp,indel}}.vcf -c4
+snakemake calls/{bayes/call_bayes_{snp,indel},gatk/call_gatk_{snp,indel},deepvariant/call_deepvariant_{snp,indel}.vcf -c4
 ```
 
 ## Workflow distribution
