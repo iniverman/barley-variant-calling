@@ -12,4 +12,4 @@ vcf_bayes_name:
 
 vcf_deepvariant_name: 
     call_deepvariant
-genome_name: GCA_904849725.1_MorexV3_pseudomolecules.chrnames.fna
+genome_name: genome.fasta
