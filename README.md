@@ -66,7 +66,7 @@ The first step is to index the reference genome. To do that you can run this cod
 bwa index -a bwtsw data/genome.fasta
 ```
 ```
-samtools fiadx data/genome.fasta
+samtools faidx data/genome.fasta
 ```
 This is a step that can take a lot of time (from hours to days depending of the genome and the computational capacity) so be patient. You can estimate the time is going to take because the terminal will show you so often how many characters have it study so far.
 
