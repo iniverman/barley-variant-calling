@@ -17,6 +17,12 @@ The data samples are in data/samples and the genome reference in fasta format is
 
 In this case we will use a pired end couple of samples of bareley (A_1_20_1.fastq.gz,A_1_20_2.fastq.gz), in this case both of them are in format. Also we use as reference the barely genome (GCA_904849725.1_MorexV3_pseudomolecules.chrnames.fna).
 
+First clone this repository with:
+```
+git clone 
+```
+Before starting you should download the gatk tools from here https://github.com/broadinstitute/gatk/releases and the picard ones from here https://broadinstitute.github.io/picard/ and put the gatk-4.5.0.0 and the picard.jar in the directory with the snakemake.
+
 
 The steps to do out variant calling are:
 
