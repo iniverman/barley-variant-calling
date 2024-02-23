@@ -173,7 +173,7 @@ snakemake --dag  -n  | dot -Tsvg > dag.svg
 
 ```
 
-![dag-plot-included](https://github.com/iniverman/barley-variant-calling-using-freebayes/blob/main/dag.svg)
+![dag-plot-included]https://github.com/iniverman/barley-variant-calling/blob/main/dag.svg
 
 
 
