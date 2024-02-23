@@ -21,7 +21,7 @@ First clone this repository with:
 ```
 git clone https://github.com/iniverman/barley-variant-calling
 ```
-Before starting you should download the gatk tools from here https://github.com/broadinstitute/gatk/releases and the picard ones from here https://broadinstitute.github.io/picard/ and put the gatk-4.5.0.0 and the picard.jar in the directory with the snakemake.
+Also you must download the gatk tools from here https://github.com/broadinstitute/gatk/releases and the picard ones from here https://broadinstitute.github.io/picard/ and put the gatk-4.5.0.0 and the picard.jar in the directory with the snakemake.
 
 
 The steps to do out variant calling are:
