@@ -6,7 +6,7 @@ samples_unit:
     [1,2]
 
 working_directory: 
-/home/iveron/barley-variant-calling/
+    /home/iveron/barley-variant-calling/
 
 vcf_gatk_name:
     call_gatk
