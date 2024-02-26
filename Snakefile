@@ -42,7 +42,7 @@ rule quality_control:
         html="data/samples/{name}_{unit}_fastqc.html",
         zip="data/samples/{name}_{unit}_fastqc.zip"
     shell:
-        "fastqc {input}"
+        "FastQC/fastqc {input}"
 
 #The next rule is to index the genome for bwa, as input it will take the
 #genome and as output the indexes.
