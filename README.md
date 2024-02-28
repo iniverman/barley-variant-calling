@@ -3,7 +3,7 @@
 ## Introduction
 
 
-In this repository we perform a variant calling study using two reads of a barley sample. For that we used freebayes and GATK to perform the variant study. 
+In this repository we perform a variant calling study using two reads of a barley sample. For that we used freebayes,GATK and deepvariant to perform the variant study. 
 
 
 Variant calling allow us to detect and study single nucleotide polymorphisms (SNPs) and insertions and deletions (indels) ,among other, from a sequence previously get from next generation sequencing (NGS). 
