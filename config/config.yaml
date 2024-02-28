@@ -1,0 +1,23 @@
+samples: 
+    A_1_20_1: ../data/samples/A_1_20_1.fastq
+    A_1_20_2: ../data/samples/A_1_20_2.fastq
+
+samples_name: 
+    A_1_20
+samples_unit:
+    [1,2]
+
+working_directory: 
+    /home/iveron/barley-variant-calling/
+
+
+vcf_gatk_name:
+    call_gatk
+
+vcf_bayes_name:
+    call_bayes
+    
+vcf_deepvariant_name:
+    call_deepvariant
+
+genome_name: genome.fasta
