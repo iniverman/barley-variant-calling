@@ -40,6 +40,8 @@ The steps to do out variant calling are:
 
   7- Filter vcf files
 
+  8- Results
+
 If the reference genome is prevously indexed, the whole code can be run using:
 ```
 snakemake -p -c4
