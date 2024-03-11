@@ -1,0 +1,22 @@
+
+
+samples_name: 
+    A_1_20 # This is the name of the samples without _ and the unit
+samples_unit:
+    [1,2] #This is the number of the samples
+
+working_directory: 
+    /home/iveron/scripting/proyecto 
+    # please change this to put the working directory you are going to use
+
+
+vcf_gatk_name:
+    call_gatk #Name you want for the gatk vcf file
+
+vcf_bayes_name:
+    call_bayes #Name you want for the bayes vcf file
+    
+vcf_deepvariant_name:
+    call_deepvariant #Name you want for the bayes vcf file
+
+genome_name: GCA_904849725.1_MorexV3_pseudomolecules.chrnames.fna # Name of your reference genome
