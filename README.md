@@ -13,15 +13,15 @@ Variant calling allow us to detect and study single nucleotide polymorphisms (SN
 
 
 To perform this study we will use Snakemake from anaconda, samtools, bwa, bcftools and the deepvariant,freebayes,picard and GATK tools.  
-The data samples are in data/samples and the genome reference in fasta format is in data a reduced one or to have the whole it can be downloaded from here https://www.ebi.ac.uk/ena/browser/view/GCA_904849725.1.
+The data samples are in data/samples and the genome reference in fasta format is ,in data folder, a reduced one file, or to have the whole genome it can be downloaded from here https://www.ebi.ac.uk/ena/browser/view/GCA_904849725.1.
 
-In this case we will use a pired end couple of samples of bareley (A_1_20_1.fastq.gz,A_1_20_2.fastq.gz), in this case both of them are in format. Also we use as reference the barely genome (GCA_904849725.1_MorexV3_pseudomolecules.chrnames.fna).
+In this case we will use a pired end couple of samples of bareley (A_1_20_1.fastq.gz,A_1_20_2.fastq.gz), in this case both of them are in format fastq.gz. Also we use as reference the barely genome (GCA_904849725.1_MorexV3_pseudomolecules.chrnames.fna).
 
 First clone this repository with:
 ```
 git clone https://github.com/iniverman/barley-variant-calling
 ```
-Also you must download the gatk tools from here https://github.com/broadinstitute/gatk/releases and the picard ones from here https://broadinstitute.github.io/picard/ and put the gatk-4.5.0.0 and the picard.jar in the directory with the snakemake.
+Also you must download the gatk tools from here https://github.com/broadinstitute/gatk/releases and the picard ones from here https://broadinstitute.github.io/picard/ and put the gatk-4.5.0.0 and the picard.jar in the directory with the snakefile.
 
 
 The steps to do out variant calling are:
