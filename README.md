@@ -40,7 +40,6 @@ The steps to do out variant calling are:
 
   7- Filter vcf files
 
-  8- Results
 
 If the reference genome is prevously indexed, the whole code can be run using:
 ```
@@ -171,11 +170,16 @@ snakemake calls{bayes/call_bayes,gatk/call_gatk,deepvariant/call_deepvariant}_so
 
 And finally we use the following code to get the vcf files:
 ```
-snakemake calls/{bayes/call_bayes_{snp,indel},gatk/call_gatk_{snp,indel},deepvariant/call_deepvariant_{snp,indel}.vcf -c4
+snakemake calls/{bayes/call_bayes_{snp,indel},gatk/call_gatk_{snp,indel},deepvariant/call_deepvariant_{snp,indel}}.vcf -c4
 ```
+## Results 
+Using VariantQC, provided by GATK, we can see the differences in the variant calling of the three algorithms used:
+
 
 ## Workflow distribution
 We can also check the steps taken by the program to perform the calling: 
+
+
 ```
 snakemake --dag  -n  | dot -Tsvg > dag.svg
 
