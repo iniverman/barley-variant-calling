@@ -23,6 +23,7 @@ git clone https://github.com/iniverman/barley-variant-calling
 ```
 Also you must download the gatk tools from here https://github.com/broadinstitute/gatk/releases and the picard ones from here https://broadinstitute.github.io/picard/ and put the gatk-4.5.0.0 and the picard.jar in the directory with the snakefile.
 
+Before starting you need to see the config file and change the parts you want to use it with your own data, for example changing the name of the working directory or the name of the samples.
 
 The steps to do out variant calling are:
 
