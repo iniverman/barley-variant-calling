@@ -174,7 +174,7 @@ snakemake calls/{bayes/call_bayes_{snp,indel},gatk/call_gatk_{snp,indel},deepvar
 ```
 ## Results 
 Using VariantQC, provided by GATK, we can see the differences in the variant calling of the three algorithms used:
-![dag-plot-included](https://github.com/iniverman/barley-variant-calling/blob/main/dag.svg)
+![dag-plot-included](https://github.com/iniverman/barley-variant-calling/blob/main/variant_type2_plot.png)
 
 ## Workflow distribution
 We can also check the steps taken by the program to perform the calling: 
