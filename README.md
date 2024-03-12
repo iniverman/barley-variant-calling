@@ -111,7 +111,10 @@ See that along all the work we will be using this {} keys. In bash, it allows to
 
 Also the code below is written so it works with the samples in this repository, if you use other data you need to change the name in some parts of the cose. For example if you see A_1_20, and you use other samples, when you copy the code you need to change the names to use the name of your samples.
 
-If a chromosme length is higher than 512Mb gatk will not work. You could divide the chromosomes to run properly gatk.
+If a chromosme length is higher than 512Mb gatk will not work. You could divide the chromosomes to run properly gatk. You can check the length of the chromosmes using:
+```
+awk ' $2>=512000000 {print "One or more chromosmoes are bigger that 512MB" }' data/GCA_904849725.1_MorexV3_pseudomolecules.chrnames.fna.fai
+```
 
 The steps to do out variant calling are:
 
