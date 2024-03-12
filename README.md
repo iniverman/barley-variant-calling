@@ -26,39 +26,54 @@ git clone https://github.com/iniverman/barley-variant-calling
 To start we need to install all the proper programs that we will use in the work, most of them are included with snakemake.
 
 We are going to start installing snakemake, to do it you should see the installation guide and tutorials from the official web: https://snakemake.readthedocs.io/en/stable/getting_started/installation.html. If you don't want you can run directly:
+
 ```
 curl -L https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-Linux-x86_64.sh -o Mambaforge-Linux-x86_64.sh
 bash Mambaforge-Linux-x86_64.sh
 ```
+
 Then you need to activate the conda enviroment, for that we create a working directory for example:
+
 ```
 mkdir snakemake-tutorial
 cd snakemake-tutorial
 ```
+
 Then we activate conda:
+
 ```
 conda activate base
 ```
+
 Then we install the mamba command:
+
 ```
 conda install -n base -c conda-forge mamba
 ```
+
 And use it to create the enviroment:
+
 ```
 mamba env create --name snakemake-tutorial --file environment.yaml
 
 ```
+
 Finally we activate the enviroment with:
+
 ```
 conda activate snakemake-tutorial
 
 ```
+
 If you want to deactivate it you need to use :
+
 ```
 conda deactivate
 
 ```
+
 Please take into account that the name of this enviroment is for this example and you can change it, also you should check https://snakemake.readthedocs.io/en/stable/tutorial/tutorial.html for a proper tutorial on how to use snakemake.
+
 
 As we will need the gatk and picard tools we are going to download them:
 
@@ -68,14 +83,23 @@ As we will need the gatk and picard tools we are going to download them:
     
 3 - Copy both of the downloads to the folder barley variant calling that have been created by coping this repository. Both of the programs must be in the same         folder as the snakefile.
 
+
 Finally we are going to install freebayes:
+
 once you have installed conda,and you have the enviroment active you can use :
+
 ```
 conda install bioconda::freebayes
 ```
+
 You can check the documentation for freebayes in https://github.com/freebayes/freebayes
 
-Before starting you need to see the config file and change the parts you need to use it with your own data, for example changing the name of the working directory or the name of the samples. The samples must be in the data/samples folder, and the genome, in the data folder
+
+Before starting you need to see the config file and change the parts you need to use it with your own data, for example changing the name of the working directory or the name of the samples. The samples must be in the data/samples folder, and the genome, in the data folder.
+
+## Variant Calling
+
+Please, see that along all the work we will be using this {} keys. In bash, it allows to exeute independently the thing inside that are separated by ','. For example if we have  {a,b}.vcf there are a.vcf and b.vcf. 
 
 The steps to do out variant calling are:
 
@@ -94,7 +118,7 @@ The steps to do out variant calling are:
   7- Filter vcf files
 
 
-If the reference genome is prevously indexed, the whole code can be run using:
+The whole code can be ran using, but i reccomend doing it step by step:
 ```
 snakemake -p -c4
 ```
@@ -113,6 +137,7 @@ Then we will get the fastq for each of our samples. Fastq is a text format to st
 
 
 To get the quality of each of the fastq you have to run this code:
+
 ```
 snakemake data/samples/A_1_20_{1,2}_fastqc.{html,zip} -c4
 ```
@@ -122,12 +147,12 @@ Quality control is important because it give us specific information about the q
 ### 3- Mapping against the reference genome.
 
 The first step is to index the reference genome. To do that you can run this code: 
+
 ```
 bwa index -a bwtsw data/genome.fasta
 ```
-```
-samtools faidx data/genome.fasta
-```
+If you see the snakefile,l you will see that is not necessary to execute the code above because executing the one in the bottom it will call the rule that index the reference genome.
+
 This is a step that can take a lot of time (from hours to days depending of the genome and the computational capacity) so be patient. You can estimate the time is going to take because the terminal will show you so often how many characters have it study so far.
 
 Then we can proceed with the mapping of our samples against the genome reference:
@@ -180,7 +205,7 @@ To get the variants using GATK.
 
 This is also a process that take some time.
 
-### 6-Perform the variant calling with deepvariantl.
+### 6-Perform the variant calling with deepvariant.
 
 To use deepvariant we have to run docker and pull an image from it. If docker is not installed use:
 ```
