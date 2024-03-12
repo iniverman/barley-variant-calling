@@ -193,6 +193,7 @@ snakemake results/markdup/A_1_20_nodup.{bam,txt} -c4
 ```
 
 ### 5- Perform the variant calling. 
+
 Finally we can perform the variant calling, to do that we have to run :
 ```
 snakemake calls/bayes/call_bayes.vcf -c4
@@ -218,8 +219,15 @@ Then we can pull the image with:
 BIN_VERSION="1.6.0"
 sudo docker pull google/deepvariant:"${BIN_VERSION}"
 ```
+Finally to get the deepvariant vcf you must do:
+
+```
+snakemake calls/deepvariant/call_deepvariant.vcf.gz -c4
+```
+See that the deepvariant algorithm give us the vcf file compessed.
 
 ### 7- Filter vcf files.
+
 Now we are going to filter our vcf files to divide it in the ones with snps and the ones with indels. 
 
 To do this we will use bcftools, but first there are some previous steps we must perform.
@@ -251,10 +259,12 @@ And finally we use the following code to get the vcf files:
 snakemake calls/{bayes/call_bayes_{snp,indel},gatk/call_gatk_{snp,indel},deepvariant/call_deepvariant_{snp,indel}}.vcf -c4
 ```
 ## Results 
+
 Using VariantQC, provided by GATK, we can see the differences in the variant calling of the three algorithms used:
 ![dag-plot-included](https://github.com/iniverman/barley-variant-calling/blob/main/call_quality.png)
 
 ## Workflow distribution
+
 We can also check the steps taken by the program to perform the calling: 
 
 
