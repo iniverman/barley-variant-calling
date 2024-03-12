@@ -21,9 +21,61 @@ First clone this repository with:
 ```
 git clone https://github.com/iniverman/barley-variant-calling
 ```
-Also you must download the gatk tools from here https://github.com/broadinstitute/gatk/releases and the picard ones from here https://broadinstitute.github.io/picard/ and put the gatk-4.5.0.0 and the picard.jar in the directory with the snakefile.
+## Installation guide 
 
-Before starting you need to see the config file and change the parts you want to use it with your own data, for example changing the name of the working directory or the name of the samples. The samples must be in the data/samples folder, and the genome in the data folder
+To start we need to install all the proper programs that we will use in the work, most of them are included with snakemake.
+
+We are going to start installing snakemake, to do it you should see the installation guide and tutorials from the official web: https://snakemake.readthedocs.io/en/stable/getting_started/installation.html. If you don't want you can run directly:
+```
+curl -L https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-Linux-x86_64.sh -o Mambaforge-Linux-x86_64.sh
+bash Mambaforge-Linux-x86_64.sh
+```
+Then you need to activate the conda enviroment, for that we create a working directory for example:
+```
+mkdir snakemake-tutorial
+cd snakemake-tutorial
+```
+Then we activate conda:
+```
+conda activate base
+```
+Then we install the mamba command:
+```
+conda install -n base -c conda-forge mamba
+```
+And use it to create the enviroment:
+```
+mamba env create --name snakemake-tutorial --file environment.yaml
+
+```
+Finally we activate the enviroment with:
+```
+conda activate snakemake-tutorial
+
+```
+If you want to deactivate it you need to use :
+```
+conda deactivate
+
+```
+Please take into account that the name of this enviroment is for this example and you can change it, also you should check https://snakemake.readthedocs.io/en/stable/tutorial/tutorial.html for a proper tutorial on how to use snakemake.
+
+As we will need the gatk and picard tools we are going to download them:
+
+1 - For gatk go to https://github.com/broadinstitute/gatk/releases and download release: gatk-4.5.0.0.zip (if its not the version 4.5.0.0 program will not work.
+    
+2 - For picard go to https://broadinstitute.github.io/picard/. Then in that page in the top right click on Latest Jar Release. Finally scroll down in the new          window and download picard.jar.
+    
+3 - Copy both of the downloads to the folder barley variant calling that have been created by coping this repository. Both of the programs must be in the same         folder as the snakefile.
+
+Finally we are going to install freebayes:
+once you have installed conda,and you have the enviroment active you can use :
+```
+conda install bioconda::freebayes
+```
+You can check the documentation for freebayes in https://github.com/freebayes/freebayes
+
+Before starting you need to see the config file and change the parts you need to use it with your own data, for example changing the name of the working directory or the name of the samples. The samples must be in the data/samples folder, and the genome, in the data folder
 
 The steps to do out variant calling are:
 
